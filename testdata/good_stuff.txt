@@ -1,0 +1,28 @@
+### malformed yaml
+invalid_yaml:
+    - key
+ - It is missing a colon after the key
+    - The indentation is incorrect
+
+
+### valid configuration
+reservoir:
+    name: My Reservoir
+    dimensions:
+        length: 1000
+        width: 500
+        depth: 200
+    porosity: 0.25
+    permeability: 100
+fluid:
+    name: Oil
+    viscosity: 0.5
+    density: 800
+simulation:
+    time_step: 0.1
+    num_steps: 1000
+    output_interval: 10
+
+
+### invalid configuration
+Just drop the reservoir key in the example above
