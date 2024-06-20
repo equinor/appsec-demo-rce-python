@@ -23,6 +23,3 @@ simulation:
     num_steps: 1000
     output_interval: 10
 
-
-### invalid configuration
-Just drop the reservoir key in the example above

@@ -12,8 +12,5 @@ def check_config(config):
     :return: True if the configuration is valid, False otherwise.
     :rtype: bool
     """
-    return True
-
-    if 'reservoir' in config:
-        return 'dimensions' in config['reservoir']
+    # TODO: implement this before V1.0
     return True
