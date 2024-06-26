@@ -12,5 +12,7 @@ def check_config(config):
     :return: True if the configuration is valid, False otherwise.
     :rtype: bool
     """
-    # TODO: implement this before V1.0
+    # This is supposed to be a python binding tho the C library part
+    #  of the reservoir simulator
+    # For the sake of this example, we will just return True
     return True
