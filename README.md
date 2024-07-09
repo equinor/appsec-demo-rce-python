@@ -3,6 +3,7 @@ A simple demo showing how using outdated software can expose serious vulnerabili
 
 The demo is supposed to be realistic, but not 100% real. There are some programming choices during the demo that are questionable to say the least, but they are there just for bringing forward discussion points. 
 
+
 ## Preparation
 To run this presentation, you will need:
 - Docker installed on your machine
@@ -23,6 +24,7 @@ IMPORTANT: make sure to disable the Snyk IDE extension (and possibly other secur
 
 ## Running the demo
 A presentation to drive the discussion can be found in the `presentation` folder, in both PowerPoint and PDF format. 
+
 
 ### Demo #1 - The Developer
 The presentation tells the story of a developer who is asked to implement a simple web application. The application must interact with a legacy piece of software. Open-source libraries can be used, but only outdated versions are compatible with the legacy system. By using outdated libraries, the developer ends up exposing the system to a Remote Code Execution vulnerability.
@@ -48,6 +50,7 @@ NOTE: files and folders mentioned in this part are in the `developer_area` folde
 5. Open the browser at `0.0.0.0:9999` and paste in various examples from the file `yaml_examples.txt`. Everything should work as expected
 6. Continue with the presentation
 
+
 ### Demo #2 - The Attacker
 So What happened? It turns out PyYaml has a feature for creating objects on the fly while deserializing YAML code. This feature can be used to instantiate objects of the `subprocess.Popen` class, which runs shell commands depending on the input string.
 
@@ -69,6 +72,7 @@ NOTE: files and folders mentioned in this part are in the `attacker_area` folder
   - NOTE: [revshells.com](https://revshells.com) might be blocked by company firewalls.
 4. Continue with the presentaton
 
+
 ### Demo #3 - The Hardening
 
 In Equinor, we use Snyk to protect ourselves from these situations. Whenever we start developing a new piece of software, the first thing to do is setting up dependency scanning in Snyk:
@@ -83,9 +87,16 @@ In Equinor, we use Snyk to protect ourselves from these situations. Whenever we 
   - If you dig a bit further on the web, you can quickly realize that the solution to all of these problems is to use `yaml.safe_load()`
 4. Continue with the presentation until the end
 
-## Disclaimers
+
+### Clean-up
+
+In Equinor, the AppSec team computes statistics based on Github and Snyk. This projects has many issues, so it can skew those statistics. If you are running this presentation in Equinor, please delete the project from Snyk. Alternatively, you can set the project's `Lifecycle` to `SandBox`.
+
+
+# Disclaimer
 - `Python 3.4` has reached end-of-life, and as such it is not allowed in Equinor. If you ever find yourself in a situation like this, the first step would be to contact the Chief Engineer IT
 - The code in this repository is BAD, in part for the sake of the demo, in part to keep the demo simple and focused on the RCE vulnerability
+
 
 # Contributing
 Contributions are always welcome! If you find a bug, or you have questions, comments, suggestions, feel free to open an issue.
