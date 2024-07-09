@@ -90,7 +90,7 @@ In Equinor, we use Snyk to protect ourselves from these situations. Whenever we 
 
 ### Clean-up
 
-In Equinor, the AppSec team computes statistics based on Github and Snyk. This projects has many issues, so it can skew those statistics. If you are running this presentation in Equinor, please delete the project from Snyk. Alternatively, you can set the project's `Lifecycle` to `SandBox`.
+In Equinor, the AppSec team computes statistics based on Github and Snyk. This projects has many issues, so it can skew those statistics. If you are running this presentation in Equinor, please delete the project from Snyk after you are finished. Alternatively, you can set the project's `Lifecycle` to `SandBox`.
 
 
 # Disclaimer
